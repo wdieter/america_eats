@@ -15,7 +15,9 @@
         <h1>america eats</h1>
         <p>Dig in and find your favourite recipes.</p>
     </div>
-    <img src={{image}}"/>
+    <p><a href="{{ url_for('hello_world') }}">
+        homepage</a></p>
+    <img src= {{ url_for('static', filename=image)}} width="600" height="400" />
     <p></p>
     <p>{{h1}}</p>
     <p>{{description}}</p>

@@ -15,55 +15,10 @@
         <h1>america eats</h1>
         <p>Dig in and find your favourite recipes.</p>
     </div>
-    <p>{{name}}</p>
-    <p>{{description}}</p>
-</div>
-
-
-<div class="container">
-    <div class="row">
-        <div class="col-md-6">a</div>
-    </div>
-    <div class="row">
-        <div class="col-md-12">b</div>
-    </div>
-    <div class="row">
-        <div class="col-md-12">c</div>
-    </div>
-    <div class="row">
-        <div class="col-md-12">d</div>
-    </div>
-    <div class="row">
-        <div class="col-md-12">e</div>
-    </div>
-    <div class="row">
-        <div class="col-md-6">f</div>
-    </div>
-</div>
-
-<div class="container">
-    <div class="well well-lg">
-        <a href="#" class="">Dutch Baby</a>
-        <span class="badge">Eggs</span>
-        <span class="badge">Flour</span>
-        <span class="badge">Buttermilk</span>
-    </div>
-</div>
-<div class="container">
-    <div class="well well-lg">
-        <a href="#" class="">Salmon in Lemon Juice</a>
-        <span class="badge">Salmon</span>
-        <span class="badge">Lemon</span>
-        <span class="badge">Dill</span>
-    </div>
-</div>
-<div class="container">
-    <div class="well well-lg">
-        <a href="#" class="">Dutch Baby</a>
-        <span class="badge">Salmon</span>
-        <span class="badge">Lemon</span>
-        <span class="badge">Dill</span>
-    </div>
+    <p><a href="{{ url_for('how_much') }}">
+        how much i love you</a></p>
+    <p><a href="{{ url_for('render_recipe', page_name='Classic Beef Brisket With Caramelized Onions.html') }}">
+        Classic Beef Brisket With Caramelized Onions</a></p>
 </div>
 </body>
 </html>
