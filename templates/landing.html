@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script></head>
+<body>
+
+<!-- Optional JavaScript -->
+<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
+
+
+<div class="container">
+    <div class="jumbotron">
+        <h1>america eats</h1>
+        <p>Dig in and find your favourite recipes.</p>
+    </div>
+    <form class="form-inline" action="{{ url_for('search_recipes') }}" method="get">
+      <label class="sr-only" for="inlineFormInput">Name</label>
+      <input type="search" name="query" class="form-control mb-2 mr-sm-2 mb-sm-0" id="inlineFormInput">
+      <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+    <p></p>
+    <div class="card-columns">
+        {% for recipe in recipes %}
+            <div class="card">
+                <a href= "{{ url_for('render_recipe', page_name=recipe.name) }}" class="text-muted" </a>
+                <img class="card-img" src="{{ url_for('static', filename= recipe.h1 +'.jpg') }}" alt="Card image">
+                <div class="card-block">
+                    <h4 class="card-title">{{recipe.h1}}</h4>
+                    {% for desc_tag in recipe.desc_tags %}
+                        <span class="badge badge-primary">{{desc_tag}}</span>
+                    {% endfor %}
+                    <p class="card-text">{{recipe.description[:170] + "..."}}</p>
+                    <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+</div>
+
+</body>
+</html>
+
+
+<br>
+
+

@@ -17,10 +17,19 @@
     </div>
     <p><a href="{{ url_for('hello_world') }}">
         homepage</a></p>
-    <img src= {{ url_for('static', filename=image)}} width="600" height="400" />
+    <img src= {{ url_for('static', filename= recipe.h1 +'.jpg') }} alt='picture' width="600" height="400" >
     <p></p>
-    <p>{{h1}}</p>
-    <p>{{description}}</p>
+    <h1>{{recipe.h1}}</h1>
+    <p>{{recipe.description}}</p>
+    <h2>Ingredients</h2>
+    {% for amount, ingredient in recipe.ingredients %}
+        <li> {{amount}}  {{ingredient}}</li>
+    {% endfor %}
+
+    <h2>Instructions</h2>
+    {% for inst in recipe.instructions %}
+        <li>{{inst}}</li>
+    {% endfor %}
 </div>
 
 </body>

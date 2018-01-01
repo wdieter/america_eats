@@ -1,7 +1,6 @@
 <!doctype html>
 <html lang="en">
 <head>
-    <title>Hello, world!</title>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -10,7 +9,6 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script></head>
 <body>
-<h1>Hello, world!</h1>
 
 <!-- Optional JavaScript -->
 <!-- jQuery first, then Popper.js, then Bootstrap JS -->
@@ -24,55 +22,62 @@
 <div class="container">
     <div class="jumbotron">
         <h1>america eats</h1>
-        <p>Digg in and find your favourite recipes.</p>
+        <p>Dig in and find your favourite recipes.</p>
     </div>
-    <p>This is some text.</p>
-    <p>This is another text.</p>
+    <div class="card">
+        <div class="card-block">
+            <h5 class="card-title">stand in for search bar</h5>
+            <span class="badge">Eggs</span>
+            <span class="badge">Flour</span>
+            <span class="badge">Buttermilk</span>
+            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+            <a href="#" class="card-link">Card link</a>
+        </div>
+    </div>
+    <p></p>
+    <div class="card-columns">
+        {% for recipe in recipes %}
+            <div class="card">
+                <img class="card-img" src="{{ url_for('static', filename= recipe.h1 +'.jpg') }}" alt="Card image">
+                <div class="card-block">
+                    <h4 class="card-title">{{recipe.h1}}</h4>
+                    <p class="card-text">{{recipe.description}}</p>
+                    <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                </div>
+            </div>
+        {% endfor %}
+
+        <div class="card">
+            <img class="card-img" src="../static/Classic Beef Brisket With Caramelized Onions.jpg" alt="Card image">
+            <div class="card-block">
+                <h4 class="card-title">Card 1</h4>
+                <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+            </div>
+        </div>
+        <div class="card">
+            <img class="card-img" src="../static/Classic Beef Brisket With Caramelized Onions.jpg" alt="Card image">
+            <div class="card-block">
+                <h4 class="card-title">Card 2</h4>
+                <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+            </div>
+        </div>
+        <div class="card">
+            <img class="card-img" src="../static/Classic Beef Brisket With Caramelized Onions.jpg" alt="Card image">
+            <div class="card-block">
+                <h4 class="card-title">Card 3</h4>
+                <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+            </div>
+        </div>
+    </div>
 </div>
 
 </body>
 </html>
 
-
-
-</body>
-</html>
-
-<div class="row">
-    <div class="col-md-12"></div>
-</div>
-<div class="row">
-    <div class="col-md-12"></div>
-</div>
-<div class="row">
-    <div class="col-md-12"></div>
-</div>
-<div class="row">
-    <div class="col-md-12"></div>
-</div>
-<div class="row">
-    <div class="col-md-12"></div>
-</div>
-<div class="row">
-    <div class="col-md-12"></div>
-</div>
 
 <br>
-<a href="#"class="well well-lg">Dutch Baby</a>
-<span class="badge">Eggs</span>
-<span class="badge">Flour</span>
-<span class="badge">Buttermilk</span>
-
-
-<a href="#"class="well well-lg">Salmon in Lemon Juice</a>
-<span class="badge">Salmon</span>
-<span class="badge">Lemon</span>
-<span class="badge">Dill</span>
-
-
-<a href="#"class="well well-lg">Salmon in Lemon Juice</a>
-<span class="badge">Salmon</span>
-<span class="badge">Lemon</span>
-<span class="badge">Dill</span>
 
 

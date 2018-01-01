@@ -1,0 +1,12 @@
+Add a favorites feature
+    - button on recipe to save to favorites
+    - favorites page (or just a filtered version of landing page?)
+
+Search:
+    - Favorites filter
+
+
+ML to classify if desert or meal
+    - feature extraction: sugar, sweet, number of ingredients, every tag,
+
+
